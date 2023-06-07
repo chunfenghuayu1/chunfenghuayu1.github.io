@@ -1,0 +1,32 @@
+import{_ as s,o as n,c as a,V as l}from"./chunks/framework.7cbf217e.js";const i=JSON.parse('{"title":"ES6中函数参数的默认值","description":"","frontmatter":{},"headers":[],"relativePath":"front-end/JavaScript/07-ES6~ES11/ES6/08-ES6中函数参数的默认值.md","filePath":"front-end/JavaScript/07-ES6~ES11/ES6/08-ES6中函数参数的默认值.md","lastUpdated":1683117492000}'),p={name:"front-end/JavaScript/07-ES6~ES11/ES6/08-ES6中函数参数的默认值.md"},o=l(`<h1 id="es6中函数参数的默认值" tabindex="-1">ES6中函数参数的默认值 <a class="header-anchor" href="#es6中函数参数的默认值" aria-label="Permalink to &quot;ES6中函数参数的默认值&quot;">​</a></h1><h2 id="概述" tabindex="-1">概述 <a class="header-anchor" href="#概述" aria-label="Permalink to &quot;概述&quot;">​</a></h2><p>ES6允许给函数的参数赋初始值</p><div class="language-javascript"><button title="Copy Code" class="copy"></button><span class="lang">javascript</span><pre class="shiki material-theme-palenight"><code><span class="line"><span style="color:#89DDFF;">&lt;!</span><span style="color:#A6ACCD;">DOCTYPE html</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">html</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">head</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">meta</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">charset</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">utf-8</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">title</span><span style="color:#89DDFF;">&gt;</span><span style="color:#A6ACCD;">函数参数默认值</span><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">title</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">head</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">body</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">script</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">//ES6 允许给函数参数赋值初始值</span></span>
+<span class="line"><span style="color:#A6ACCD;">//1. 形参初始值 具有默认值的参数, 一般位置要靠后(潜规则)</span></span>
+<span class="line"><span style="color:#A6ACCD;">function add(a,b,c=10) </span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">return a </span><span style="color:#89DDFF;">+</span><span style="color:#A6ACCD;"> b </span><span style="color:#89DDFF;">+</span><span style="color:#A6ACCD;"> c;</span></span>
+<span class="line"><span style="color:#89DDFF;">}</span></span>
+<span class="line"><span style="color:#A6ACCD;">let result = add(1,2);</span></span>
+<span class="line"><span style="color:#A6ACCD;">console.log(result); // 13</span></span>
+<span class="line"><span style="color:#A6ACCD;">//2. 与解构赋值结合</span></span>
+<span class="line"><span style="color:#A6ACCD;">// 注意这里参数是一个对象</span></span>
+<span class="line"><span style="color:#A6ACCD;">function connect(</span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;">host</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">127.0.0.1</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> username</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;">password</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> port</span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">)</span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">console</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">log</span><span style="color:#A6ACCD;">(host)</span></span>
+<span class="line"><span style="color:#A6ACCD;">console</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">log</span><span style="color:#A6ACCD;">(username)</span></span>
+<span class="line"><span style="color:#A6ACCD;">console</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">log</span><span style="color:#A6ACCD;">(password)</span></span>
+<span class="line"><span style="color:#A6ACCD;">console</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">log</span><span style="color:#A6ACCD;">(port)</span></span>
+<span class="line"><span style="color:#89DDFF;">}</span></span>
+<span class="line"><span style="color:#A6ACCD;">connect(</span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">host: </span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">atguigu.com</span><span style="color:#89DDFF;">&#39;</span><span style="color:#89DDFF;">,</span></span>
+<span class="line"><span style="color:#A6ACCD;">username: </span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">root</span><span style="color:#89DDFF;">&#39;</span><span style="color:#89DDFF;">,</span></span>
+<span class="line"><span style="color:#A6ACCD;">password: </span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">root</span><span style="color:#89DDFF;">&#39;</span><span style="color:#89DDFF;">,</span></span>
+<span class="line"><span style="color:#A6ACCD;">port: </span><span style="color:#F78C6C;">3306</span></span>
+<span class="line"><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">)</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">script</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">body</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">html</span><span style="color:#89DDFF;">&gt;</span></span></code></pre></div>`,4),t=[o];function e(c,r,D,F,y,C){return n(),a("div",null,t)}const d=s(p,[["render",e]]);export{i as __pageData,d as default};
